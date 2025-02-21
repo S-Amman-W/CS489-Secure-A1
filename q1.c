@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 #define BUFSIZE 256
 
@@ -29,6 +30,6 @@ int main(int argc, char** argv) {
     char safe_filename[BUFSIZE];
     sanitize_filename(argv[1], safe_filename, BUFSIZE);
     char cmd2[BUFSIZE] = {0};
-    snprintf(cmd2, cmd, safe_filename);
-    system(cmd2);
+    strncat(cmd, safe_filename, BUFSIZE);
+    system(cmd);
 }
