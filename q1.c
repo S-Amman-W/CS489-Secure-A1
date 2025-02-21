@@ -29,6 +29,6 @@ int main(int argc, char** argv) {
     char safe_filename[BUFSIZE];
     sanitize_filename(argv[1], safe_filename, BUFSIZE);
     char cmd2[BUFSIZE] = {0};
-    sprintf(cmd2, cmd, safe_filename);
+    snprintf(cmd2, cmd, safe_filename);
     system(cmd2);
 }
